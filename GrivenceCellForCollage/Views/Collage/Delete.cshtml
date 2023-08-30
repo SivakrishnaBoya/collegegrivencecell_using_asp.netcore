@@ -1,0 +1,16 @@
+﻿@model GrivenceCellForCollage.Models.Users
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form asp-action="Delete" asp-controller="Collage">
+<div>
+<label asp-for="Id"></label>
+<input asp-for="Id" type="number" />
+</div>
+<div>
+     <input  type="submit"  value="Delete" />
+</div>
+</form>
+@if (@ViewBag.Result !=null){
+    <h6>@ViewBag.Result</h6>
+}

@@ -1,0 +1,67 @@
+﻿
+
+
+@model IEnumerable<GrivenceCellForCollage.Models.CompaintBox>
+@{
+    Layout = "~/Views/Shared/_HODLayout.cshtml";
+}
+
+<h6 class="justify-content-center">Complaints</h6>
+<br />
+
+@if (@ViewBag.Result != null)
+{
+    <form asp-action="HOD" asp-controller="Collage">
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th>
+                        ComplaintId
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        DateTime
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var items in Model)
+                {
+                    <tr>
+                        <td>  @items.ComplaintId</td>
+                        <td>  @items.Description</td>
+                        <td>  @items.Id</td>
+                        <td>  @items.Time</td>
+                        <td>
+                            @items.status
+                        </td>
+                        <td>
+                            <input type="submit" value="solve" asp-route-id="@items.ComplaintId">
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </form>
+}
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <table border="2" width="1350" cellpadding="6" cellspacing="6" align="center">
+            <tr style="background-color:orchid;color:white">
+                <td colspan="2"><center><h1>College Grievance Cell </h1>
+                        <h1>Welcome Admin</h1>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td height="450" width="500">
+                    <ul>
+                        <li><a asp-action="Create" asp-controller="Collage">Add Student</a></li>
+                        <br />
+                        <li><a asp-action="Create" asp-controller="Collage">Add HOD</a></li>
+                        <br />
+                        <li><a asp-action="Delete" asp-controller="Collage">Delete Student</a></li>
+                        <br />
+                        <li><a asp-action="Delete" asp-controller="Collage">Delete HOD</a></li>
+                        <br />
+                        <li><a asp-action="Admin" asp-controller="Collage" method="Get">Display Solved Complaints</a></li>
+                        <br />
+                        <li><a asp-action="Amin" asp-controller="Collage" method="Get">Display Pending Comaplaints</a></li>
+                        <br />
+                        <li><a asp-action="Index" asp-controller="Collage" method="Get">Logout</a></li>
+
+                    </ul>
+                </td>
+                <td height="500" width="2500">
+                    @RenderBody()
+                </td>
+            </tr>
+            <tr style="background-color:black;color:pink">
+                <td colspan="6"><center>Our Address: 10th Floor, Sandhya Techno1,Khajaguda X Roads, Hyderabad</center></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
+

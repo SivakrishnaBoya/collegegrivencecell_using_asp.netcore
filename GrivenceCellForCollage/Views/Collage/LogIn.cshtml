@@ -1,0 +1,62 @@
+﻿@model GrivenceCellForCollage.Models.Register
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    form{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        
+    }
+    .input{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .input1{
+        margin-left: 30px;
+        margin-right: 40px;
+    }
+</style>
+<h1>LogIn Form</h1>
+<form asp-action="LogIn" asp-controller="Collage">
+  
+    
+    <div>
+        <label asp-for="Id" class="input1"></label>
+        <input asp-for="Id"  type="number" class="input1"/>
+    </div>
+    
+
+    <br />
+   
+       
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password"  type="number" class="input"/>
+    </div>
+   
+    
+    <br />
+    <div class="form-group">
+        <div class="form-group">
+            <label for="CategoryId">Select a Department:</label>
+            <br>
+            @Html.DropDownListFor(m => m.DepartmentId, (SelectList)ViewBag.Dept, "--Select Branch--", new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div>
+       
+        <input asp-for="Id" type="submit"  value="LogIn" class="btn btn-primary"/>
+    </div>
+    <br />
+    <br />
+
+</form>
+
+@if(@ViewBag.Result !=null)
+{
+<h6>@ViewBag.Result</h6>
+}

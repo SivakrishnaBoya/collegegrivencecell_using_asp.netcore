@@ -1,0 +1,41 @@
+﻿@model GrivenceCellForCollage.Models.CompaintBox
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+<h1>Complaint form </h1>
+<form asp-action="Complaint" asp-controller="Collage">
+    <div>
+        <label asp-for="ComplaintId"></label>
+        <input asp-for="ComplaintId" type="number" />
+    </div>
+    <br>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" type="text" />
+    </div>
+    <br>
+    <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id" type="text" />
+    </div>
+    <br>
+    <div>
+        <label asp-for="Time"></label>
+        <input asp-for="Time" type="text"/>
+    </div>
+    <br>
+    <div>
+        <label asp-for="status"></label>
+        <input asp-for="status" type="text" />
+    </div>
+    <br>
+    <div>
+
+        <input type="submit" value="Complaint" class="btn btn-primary" />
+    </div>
+    <br>
+    <br />
+   
+</form>
+
+

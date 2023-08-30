@@ -1,0 +1,36 @@
+﻿@model GrivenceCellForCollage.Models.Users
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Create New User form </h1>
+<form asp-action="Create" asp-controller="Collage">
+    <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id" type="number" />
+    </div>
+    <br>
+   
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" />
+    </div>
+    <br>
+
+    <br>
+    <div>
+        <label asp-for="DepartmentId"> Department</label>
+        <input asp-for="DepartmentId" type="number" />
+    </div>
+    <br>
+    <div>
+
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+    <br>
+    <br />
+    <a asp-action="LogIn" asp-controller="Collage">LogIn</a>
+</form>
+@if (@ViewBag.Result != null)
+{
+    <h6>@ViewBag.Result</h6>
+}
